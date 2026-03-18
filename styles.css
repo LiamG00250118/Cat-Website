@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+.cat {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: dance 1s infinite;
+}
+
+/* Cat Head */
+.cat-head {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #FF8C00;
+    border: 3px solid #000;
+    margin: 0 auto 10px;
+}
+
+/* Ears */
+.ear {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    background-color: #FF8C00;
+    border: 2px solid #000;
+    top: -15px;
+}
+
+.ear-left {
+    left: 10px;
+    clip-path: polygon(0 0, 100% 0, 70% 100%);
+}
+
+.ear-right {
+    right: 10px;
+    clip-path: polygon(0 0, 100% 0, 30% 100%);
+}
+
+/* Eyes */
+.eye {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border: 1px solid #000;
+    top: 20px;
+}
+
+.eye-left {
+    left: 15px;
+}
+
+.eye-right {
+    right: 15px;
+}
+
+/* Nose */
+.nose {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #FF1493;
+    border: 1px solid #000;
+    top: 35px;
+    left: 27px;
+}
+
+/* Mouth */
+.mouth {
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    background-color: #000;
+    bottom: 12px;
+    left: 24px;
+}
+
+/* Body */
+.cat-body {
+    width: 50px;
+    height: 50px;
+    background-color: #FF8C00;
+    border: 3px solid #000;
+    margin: 0 auto;
+}
+
+/* Legs */
+.cat-leg {
+    position: absolute;
+    width: 12px;
+    height: 30px;
+    background-color: #FF8C00;
+    border: 2px solid #000;
+    bottom: -30px;
+}
+
+.leg-left {
+    left: 15px;
+    animation: leg-bounce-left 1s infinite;
+}
+
+.leg-right {
+    right: 15px;
+    animation: leg-bounce-right 1s infinite;
+}
+
+/* Tail */
+.cat-tail {
+    position: absolute;
+    width: 12px;
+    height: 40px;
+    background-color: #FF8C00;
+    border: 2px solid #000;
+    right: -15px;
+    top: 20px;
+    transform-origin: top right;
+    animation: tail-wag 1s infinite;
+}
+
+/* Animations */
+@keyframes dance {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    25% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    75% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+@keyframes leg-bounce-left {
+    0%, 100% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(-15deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    75% {
+        transform: rotateZ(15deg);
+    }
+}
+
+@keyframes leg-bounce-right {
+    0%, 100% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(15deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    75% {
+        transform: rotateZ(-15deg);
+    }
+}
+
+@keyframes tail-wag {
+    0%, 100% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(20deg);
+    }
+    50% {
+        transform: rotateZ(0deg);
+    }
+    75% {
+        transform: rotateZ(-20deg);
+    }
+}
